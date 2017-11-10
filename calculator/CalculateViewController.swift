@@ -35,6 +35,10 @@ class CalculateViewController: UIViewController {
         }
     }
 
+    enum select{
+        case add,less,multiply,except
+    }
+    
     
     //比對Button的選項
     func Resultnumber (){
@@ -105,7 +109,6 @@ class CalculateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NumberLabel.text = "\(totalNumber)"
         // Do any additional setup after loading the view.
     }
 
