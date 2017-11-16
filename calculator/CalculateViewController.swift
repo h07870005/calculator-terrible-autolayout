@@ -17,6 +17,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var addBToutlet: UIButton!
     @IBOutlet weak var ResultBToutlet: UIButton!
     
+    
     var choice = ""
     var Resultchoice = ""
     var numberclick: Bool = false
@@ -24,6 +25,7 @@ class CalculateViewController: UIViewController {
     var oneNumber:Double = 0
     var TwoNumber:Double = 0
     var ThreeNumber:Double = 0
+    let blackcolor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
     //這是取得數值的，當他觸發後會取numberLabel內的值，跑到set後 numberLabel就重置了。
     var getnumber:Double {
         get {
@@ -75,7 +77,7 @@ class CalculateViewController: UIViewController {
     @IBAction func numberBT(_ sender: UIButton) {
         let number = sender.currentTitle
         
-        if numberclick{
+        if numberclick,NumberLabel.text != ""{
             NumberLabel.text = NumberLabel.text! + number!
             print("\(NumberLabel.text)")
         }else{
@@ -104,11 +106,23 @@ class CalculateViewController: UIViewController {
         Resultnumber()
     }
     
+
+    
     @IBOutlet weak var NumberLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addBToutlet.layer.borderColor = UIColor.black.cgColor
+        self.addBToutlet.layer.borderWidth = 1.5
+        self.lessBToutlet.layer.borderWidth = 1.5
+        self.lessBToutlet.layer.borderColor = UIColor.black.cgColor
+        self.multiplyBToutlet.layer.borderWidth = 1.5
+        self.multiplyBToutlet.layer.borderColor = UIColor.black.cgColor
+        self.exceptBToutlet.layer.borderWidth = 1.5
+        self.exceptBToutlet.layer.borderColor = UIColor.black.cgColor
+        self.ResultBToutlet.layer.borderWidth = 1.5
+        self.ResultBToutlet.layer.borderColor = UIColor.black.cgColor
         // Do any additional setup after loading the view.
     }
 
